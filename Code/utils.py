@@ -14,10 +14,7 @@ class utils():
     @staticmethod
     def loadAndPrerocess(path):
         image = cv.imread(path)
-        try:
-            image = cv.resize(image,(128,128))
-        except:
-            return None
+        image = cv.resize(image,(64,64))
         image = cv.cvtColor(image,cv.COLOR_BGR2RGB)
         image = image/255.0
         return image
